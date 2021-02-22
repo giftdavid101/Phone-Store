@@ -4,7 +4,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
 const CollectionItem = ({item, addItem }) => {
-    const { name, price, imageUrl } = item;
+    const { name, price, imageUrl,id} = item;
     <div className="collection-item">
         <div
             key={id}
@@ -23,7 +23,7 @@ const CollectionItem = ({item, addItem }) => {
     </div>;
 };
 
-const mapDispatchToProps = () => ({
+const mapDispatchToProps = (dispatch) => ({
     addItem: (item) => dispatch(addItem(item)),
 });
 export default connect(null, mapDispatchToProps)(CollectionItem);
